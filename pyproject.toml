@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "animeflv-downloader"
+version = "0.1.0"
+description = "CLI for scraping AnimeFLV links and sending them to JDownloader."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "myjdapi>=1.0.0",
+  "selenium>=4.6.0",
+  "scrapy>=2.0.0",
+  "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+build = ["pyinstaller>=6.0.0"]
+
+[project.scripts]
+animeflv = "init:main"
+
+[tool.setuptools]
+py-modules = ["downloader", "init", "regex", "scraper"]
